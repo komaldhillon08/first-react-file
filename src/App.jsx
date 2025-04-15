@@ -2,6 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+// crate the componnent folder and run di function header.jsx file 
+import CoreConcept from './components/header.jsx'
+// add new data,js and import file or code 
+import { CORE_CONCEPTS } from './data.js'
+// add tabButton components 
+import TabButton from './components/tabButton.jsx'
+
 
 // import img 
 // import reactImg from './assets/react.svg'
@@ -29,15 +36,7 @@ const description = reactDescriptions[reactRandomImt(4)];
 
 // create the new component 
 
-function CoreConcept(props){
-  return(
-    <a>
-      <img src={props.img} alt="" className="logo react"/>
-    {/*   <h3>komal</h3>
-      <p>descretion</p> */}
-    </a>
-  );
-}
+
 
 
 function App() {
@@ -48,12 +47,16 @@ function App() {
       <div>
         {/* <ImgFunction /> */}
         <CoreConcept 
-          img={viteLogo}
+
+          // img={viteLogo}
+          img={CORE_CONCEPTS[1].Image}
+
        /*    title = "components"
           description = "this is ui" */
         />
         <CoreConcept 
-          img={reactLogo}
+          // img={reactLogo}
+          img={CORE_CONCEPTS[0].Image}
 
         />
        {/*   <CoreConcept 
@@ -75,6 +78,14 @@ function App() {
          {description} Click on the Vite and React logos to learn more
       </p> 
       
+
+      <section id="examples">
+        <h2>Examples</h2>
+        <menu>
+          <TabButton>Components</TabButton>
+          <TabButton>secondComponents</TabButton>
+        </menu>
+      </section>
     
     </>
   )
