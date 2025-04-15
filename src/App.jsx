@@ -7,7 +7,8 @@ import CoreConcept from './components/header.jsx'
 // add new data,js and import file or code 
 import { CORE_CONCEPTS } from './data.js'
 // add tabButton components 
-import TabButton from './components/tabButton.jsx'
+import TabButton from './components/tabButton/tabButton.jsx'
+import './components/tabButton/tabButton.css'
 
 
 // import img 
@@ -81,7 +82,7 @@ function App() {
 
       <section id="examples">
         <h2>Examples</h2>
-        <menu>
+        <menu id="btn">
           <TabButton>Components</TabButton>
           <TabButton>secondComponents</TabButton>
         </menu>

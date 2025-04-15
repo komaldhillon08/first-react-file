@@ -1,6 +1,6 @@
 export default function TabButton({children}) {
     return (
-        <li>
+        <li className="btn">
             <button>{children}</button>
         </li>
     );
