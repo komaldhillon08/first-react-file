@@ -42,6 +42,10 @@ const description = reactDescriptions[reactRandomImt(4)];
 
 function App() {
   const [count, setCount] = useState(0)
+  function handlerClick(selectContent) {
+    console.log(selectContent);
+    
+}
 
   return (
     <>
@@ -83,8 +87,12 @@ function App() {
       <section id="examples">
         <h2>Examples</h2>
         <menu id="btn">
-          <TabButton>Components</TabButton>
-          <TabButton>secondComponents</TabButton>
+         {/*  <TabButton onSelect={handlerClick}>Components</TabButton>  selectContent
+          <TabButton>secondComponents</TabButton> */}
+         
+          <TabButton onSelect={()=> {handlerClick('Components') }}>Components</TabButton>  
+          <TabButton onSelect={() => {handlerClick('jsx') }}>Jsx</TabButton> 
+       
         </menu>
       </section>
     
