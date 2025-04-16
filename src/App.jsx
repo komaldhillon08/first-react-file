@@ -42,8 +42,14 @@ const description = reactDescriptions[reactRandomImt(4)];
 
 function App() {
   const [count, setCount] = useState(0)
+  const [selectTopic , setSelectTopi] = useState(`Pleace Click The Butoon`);
+
   function handlerClick(selectContent) {
-    console.log(selectContent);
+    setSelectTopi(selectContent)
+    console.log(selectTopic);
+    
+
+    // console.log(selectContent);
     
 }
 
@@ -94,6 +100,7 @@ function App() {
           <TabButton onSelect={() => {handlerClick('jsx') }}>Jsx</TabButton> 
        
         </menu>
+        {selectTopic}
       </section>
     
     </>
