@@ -49,7 +49,7 @@ function App() {
   const [selectTopic, setSelectTopi] = useState('Components');
 
   function handlerClick(selectContent) {
-    console.log("selecteCONTENTY >>>", selectContent);
+    console.log("selecteCONT ENTY >>>", selectContent);
 
     setSelectTopi(selectContent)
     console.log(selectTopic);
