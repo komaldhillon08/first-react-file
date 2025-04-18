@@ -3,15 +3,22 @@ import vitaImage from '/vite.svg'
 
 export const CORE_CONCEPTS = [
     {
-        Image: reactImage,
-
-    },
-    {
         Image: vitaImage,
 
         description:
             'Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.',
+    },
+    {
+        Image: reactImage,
+        description:
+        'Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.',
+    }, {
+        Image: reactImage,
+        description:
+        'Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.',
     }
+ 
+ 
 ];
 
 export const EXAMPLES = {

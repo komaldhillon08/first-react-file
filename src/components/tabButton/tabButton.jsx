@@ -11,11 +11,11 @@ function handlerClick() {
     );
 }
  */
-export default function TabButton({children , onSelect}) {
+export default function TabButton({children , onSelect , isSelect}) {
   
         return (
             <li className="btn">
-                <button onClick={onSelect} >{children}</button>
+                <button className={isSelect} onClick={onSelect} >{children}</button>
             </li>
         );
     }
