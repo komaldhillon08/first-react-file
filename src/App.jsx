@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState , Fragment } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 // crate the componnent folder and run di function header.jsx file 
 import CoreConcept from './components/header.jsx'
 // add new data,js and import file or code 
-import { CORE_CONCEPTS } from './data.js'
+import { CORE_CONCEPTS } from './data.js'        
 import { EXAMPLES } from './data.js';
 
 
@@ -80,7 +80,7 @@ function App() {
   console.log(EXAMPLES, selectTopic);
   
   return (
-    
+    <Fragment>
     <main>
       <div>
         {/* <ImgFunction /> */}
@@ -182,7 +182,8 @@ function App() {
         {buttonContent}
       </section>
 
-      </main>
+    </main>
+    </Fragment>
   )
 }
 
