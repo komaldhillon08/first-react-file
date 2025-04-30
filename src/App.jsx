@@ -1,18 +1,11 @@
 import { useState , Fragment } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-// crate the componnent folder and run di function header.jsx file 
-import CoreConcept from './components/header.jsx'
-// add new data,js and import file or code 
-import { CORE_CONCEPTS } from './data.js'        
+//CoreConcepts.jsx components 
+import CoreConcepts from './components/CoreConcepts.jsx'
+
 import { EXAMPLES } from './data.js';
-
-
-// add tabButton components 
-import TabButton from './components/tabButton/tabButton.jsx'
-import './components/tabButton/tabButton.css'
-
+// examples jsx components
+import Examples from './components/examples.jsx'
 
 // import img 
 // import reactImg from './assets/react.svg'
@@ -46,77 +39,13 @@ const description = reactDescriptions[reactRandomImt(4)];
 function App() {
   const [count, setCount] = useState(0)
 
-  const [selectTopic, setSelectTopi] = useState();
-
-  function handlerClick(selectContent) {
-    console.log("selecteCONT ENTY >>>", selectContent);
-
-    setSelectTopi(selectContent)
-    console.log(selectTopic);
-    // console.log(selectContent);
-
-  }
-
-  // 3 way 
-  let buttonContent = <p>Please select the topics</p>;
-
-  if (selectTopic) {
-
-    buttonContent = (
-
-      <div id="tab-content">
-
-
-        <h3>{EXAMPLES[selectTopic].title}</h3>
-        <p>{EXAMPLES[selectTopic].description}</p>
-        <pre>
-          <code>{EXAMPLES[selectTopic].code}</code>
-        </pre>
-      </div>
-    );
-  }
-
-
-  console.log(EXAMPLES, selectTopic);
+  
   
   return (
     <Fragment>
     <main>
       <div>
-        {/* <ImgFunction /> */}
-      
-
-
-        {CORE_CONCEPTS.map((conceptItem, index) => (
-          <CoreConcept
-            key={conceptItem.image || index}
-            img={conceptItem.Image}
-            description={conceptItem.description}
-          />
-        ))}
-
-
-
-        {/* {CORE_CONCEPTS.map((conceptItem) => (
-          <CoreConcept key={conceptItem.image} {...conceptItem} />
-        ))}
- */}
-        {/* <CoreConcept
-          
-          // img={viteLogo}
-          img={CORE_CONCEPTS[1].Image}
-          description={CORE_CONCEPTS[1].description}
-
-        /> */}
-        {/* <CoreConcept
-          // img={reactLogo}
-          img={CORE_CONCEPTS[0].Image}
-          description={CORE_CONCEPTS[0].description}
-        /> */}
-        {/*   <CoreConcept 
-          img={reactLogo}
-
-        /> */}
+      <CoreConcepts />
 
       </div>
       <h1>Vite + React</h1>
@@ -136,52 +65,8 @@ function App() {
 
       <span>{EXAMPLES.Jsx.title}</span>
 
-      <section id="examples">
-        <h2>Examples</h2>
-        <menu id="btn">
-          {/*  <TabButton onSelect={handlerClick}>Components</TabButton>  selectContent
-          <TabButton>secondComponents</TabButton> */}
-
-          <TabButton isSelect={selectTopic === 'Components'} onSelect={() => { handlerClick('Components') }}>Components</TabButton>
-          <TabButton isSelect={selectTopic === 'Jsx'} onSelect={() => { handlerClick('Jsx') }}>Jsx</TabButton>
-
-        </menu>
-        {/* {selectTopic} */}
-
-        {/* s:3 video 56 and remove the componet in usestate then add the condition 
-        if not selectTopic ? truthy hai too show this  <p>Please select the topics</p>
-         other show my tab div "3 ways this is one 3 way in top " */}
-
-        {/*   {!selectTopic ? (
-          <p>Please select the topics</p>0
-        ) : (
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectTopic].title}</h3>.
-            <p>{EXAMPLES[selectTopic].description}</p>
-            <pre>
-              <code>
-                {EXAMPLES[selectTopic].code}
-              </code>
-            </pre>
-          </div>
-        )} */}
-
-        {/* this is a second way  */}
-        {/*  {!selectTopic && <p>Please select the topics</p>} 
-           {selectTopic && (
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectTopic].title}</h3>.
-            <p>{EXAMPLES[selectTopic].description}</p>
-            <pre>
-              <code>
-                {EXAMPLES[selectTopic].code}
-              </code>
-            </pre>
-          </div>
-        )} */}
-        {buttonContent}
-      </section>
-
+     
+      <Examples />
     </main>
     </Fragment>
   )
